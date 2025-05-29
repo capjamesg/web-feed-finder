@@ -1,0 +1,44 @@
+{
+    "name": "Web Feed Subscription Button",
+    "description": "Show a button if the page you are viewing has a feed to which you can subscribe.",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "action": {
+        "default_icon": "/assets/rss.png",
+        "default_title": "Subscribe to this website"
+    },
+    "page_action": {
+        "default_icon": "/assets/rss.svg",
+        "default_title": "Subscribe to this website"
+    },
+    "permissions": ["tabs", "activeTab", "storage"],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "background": {
+        "service_worker": "background.js",
+        "scripts": ["background.js"],
+        "type": "module"
+    },
+    "host_permissions": ["<all_urls>"],
+    "options_page": "options.html",
+    "web_accessible_resources": [
+      {
+        "resources": ["cross_origin_dialog.html", "cross_origin_dialog.js"],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["app.js"]
+      }
+    ],
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "web-feed-subscriber@capjamesg"
+      }
+    }
+  }
+  

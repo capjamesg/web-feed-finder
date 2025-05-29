@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Feed Finder Settings</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+        html {
+            color-scheme: light dark;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            max-width: 25rem;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+        }
+        label, input, small {
+            display: block;
+        }
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        form input, button {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Feed Finder Settings</h1>
+    <form>
+        <label for="feedUrl">Enter a prefix to use for feed URLs:</label>
+        <input type="text" name="prefixUrl" placeholder="Enter prefix URL" required>
+        <small>Example: https://artemis.jamesg.blog/add?url=</small>
+        <button type="submit">Save</button>
+    </form>
+    <script src="options.js"></script>
+</body>
+</html>
