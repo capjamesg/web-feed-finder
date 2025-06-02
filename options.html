@@ -17,7 +17,7 @@
             max-width: 25rem;
             margin: auto;
         }
-        input {
+        input, select {
             width: 100%;
         }
         label, input, small {
@@ -34,7 +34,7 @@
         button:hover {
             cursor: pointer;
         }
-        form input, button {
+        form input, button, li, p, select, label {
             font-size: 1.2rem;
         }
     </style>
@@ -45,7 +45,20 @@
         <label for="feedUrl">Enter a prefix to use for feed URLs:</label>
         <input type="text" name="prefixUrl" placeholder="Enter prefix URL" required>
         <small>Example: https://artemis.jamesg.blog/add?url=</small>
+        <p>Or, select a feed reader:</p>
+        <ul>
+            <li><a data-url="https://artemis.jamesg.blog/add?url=" href="#">Artemis</a></li>
+            <li><a data-url="https://www.newsblur.com/?url=" href="#">Newsblur</a></li>
+            <li><a data-url="https://feedly.com/i/discover/sources/search/feed/" href="#">Feedly</a></li>
+            <li><a data-url="https://www.inoreader.com/subscribe?url=" href="#">Inoreader</a></li>
+        </ul>
+        <label for="iconPreference">Icon Preference:</label>
+        <select name="iconPreference" id="iconPreference">
+            <option value="grey">Grey</option>
+            <option value="orange">Orange</option>
+        </select>
         <button type="submit">Save</button>
+        <p id="saved"></p>
     </form>
     <script src="options.js"></script>
 </body>
